@@ -404,6 +404,11 @@ public final class MinimalHttpAsyncClient extends AbstractMinimalHttpAsyncClient
             this.released = new AtomicBoolean(false);
         }
 
+        @Override
+        public boolean isConnected() {
+            return connectionEndpoint.isConnected();
+        }
+
         boolean isReleased() {
             return released.get();
         }
